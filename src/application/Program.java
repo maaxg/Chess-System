@@ -26,15 +26,13 @@ public class Program {
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-            }catch(ChessException ex){
+            }catch(ChessException | InputMismatchException ex){
                 System.out.println(ex.getMessage());
-                System.out.println("Press Enter to continue");
-                sc.nextLine();
-            }catch(InputMismatchException e){
-                System.out.println(e.getMessage());
                 System.out.println("Press Enter to continue");
                 sc.nextLine();
             }
         }
+
     }
+
 }
